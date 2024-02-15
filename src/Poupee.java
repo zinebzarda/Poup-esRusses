@@ -10,15 +10,14 @@ abstract void placerDans(Poupee p);
 abstract void sortirDe(Poupee p);
 
 // ----- Constructor Parameters---
-public Poupee(int taille,boolean ouvert){
+public Poupee(int taille){
     this.taille=taille;
-    this.ouvert = ouvert;
 }
 // ------- getters-----
 public int getTaille(){
     return taille;
 }
-public boolean getouvert(){
+public boolean isouvert(){
     return ouvert;
 }
 
@@ -29,7 +28,5 @@ public boolean getouvert(){
     public void setOuvert(boolean ouvert){
     this.ouvert=ouvert;
     }
-
-
 
 }

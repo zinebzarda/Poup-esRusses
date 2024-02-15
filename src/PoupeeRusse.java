@@ -1,20 +1,50 @@
-public class PoupeeRusse extends Poupee {
-    public PoupeeRusse(int taille, boolean ouvert) {
-        super(taille, ouvert);
+class PoupeeRusse extends Poupee {
+    private Poupee poupee;
+    public PoupeeRusse(int taille ) {
+        super(taille);
+        poupee = null;
+    }
+
+    // getter and setter
+    public Poupee getPoupee() {
+        return poupee;
+    }
+
+    public void setPoupee(Poupee poupee) {
+        this.poupee = poupee;
     }
 
     @Override
-    void ouvrir() {
-
+    public void ouvrir() {
+        if (!isouvert()){
+            setOuvert(true);
+            System.out.println("is open");
+        }else {
+            System.out.println("is already open");
+        }
     }
 
     @Override
-    void fermer() {
-
+    public void fermer() {
+        if (isouvert()){
+            setOuvert(false);
+            System.out.println("is close");
+        }else {
+            System.out.println("is already close");
+        }
     }
 
     @Override
     void placerDans(Poupee p) {
+        if (p.getTaille() > this.getTaille()){
+            System.out.println("the first is big");
+        }
+        else if(!p.isouvert()) {
+            System.out.println("is close");
+        }
+        else {
+            setPoupee(p);
+        }
 
     }
 
@@ -22,4 +52,8 @@ public class PoupeeRusse extends Poupee {
     void sortirDe(Poupee p) {
 
     }
+
+
+
+
 }
