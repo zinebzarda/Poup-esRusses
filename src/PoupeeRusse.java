@@ -5,7 +5,6 @@ class PoupeeRusse extends Poupee {
         poupee = null;
     }
 
-    // getter and setter
     public Poupee getPoupee() {
         return poupee;
     }

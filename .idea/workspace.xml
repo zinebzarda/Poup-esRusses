@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3993fd9-6ce2-4d28-a830-a9956de8f2cc" name="Changes" comment="commit:">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Poupee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poupee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PoupeeRusse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PoupeeRusse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +57,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708003732652</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit:">
+      <option name="closed" value="true" />
+      <created>1708012804630</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708012804630</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
