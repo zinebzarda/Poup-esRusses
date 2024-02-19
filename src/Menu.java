@@ -26,16 +26,16 @@ public class Menu {
             do {
                 System.out.println("| ------------- Menu----------------- |");
                 System.out.println("|-------------------------------------|");
-                System.out.println("|      1. Ajouter un poupée.          |");
+                System.out.println(ANSI_CYAN+"|      1. Ajouter un poupée.          |");
                 System.out.println("|      2. Afficher les poupée.        |");
                 System.out.println("|      3. Commencer le jeu.           |");
-                System.out.println("|      4. Quitter le jeu.             |");
-                System.out.println("|----------------------------------- -|");
-                System.out.print("          Entrez un choix : ");
+                System.out.println(ANSI_RED+"|      4. Quitter le jeu.             |");
+                System.out.println(ANSI_RESET+"|----------------------------------- -|");
+                System.out.print(ANSI_GREEN +"          Entrez un choix : "+ANSI_RESET );
                 Choix = scanner.nextInt();
                 switch (Choix) {
                     case 1:
-                        System.out.println("Ajouter la poupée numéro 1");
+                        System.out.println(ANSI_RED+"Ajouter la poupée numéro 1"+ANSI_RESET);
                         poup1.ajouterPoupees();
                         System.out.println("Ajouter la poupée numéro 2");
                         poup2.ajouterPoupees();
