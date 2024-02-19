@@ -2,12 +2,16 @@ abstract class Poupee {
 private int taille;
 private boolean ouvert;
 
+
+
+
 abstract void ouvrir();
 
 abstract void fermer();
 
 abstract void placerDans(Poupee p);
 abstract void sortirDe(Poupee p);
+//abstract void AjouterPoupee();
 
 // ----- Constructor Parameters---
 public Poupee(int taille){
@@ -22,7 +26,7 @@ public boolean isouvert(){
 }
 
 // ------ setters-------
-    public void setTaille(int taille){
+    public  void setTaille(int taille){
     this.taille=taille;
     }
     public void setOuvert(boolean ouvert){
