@@ -4,21 +4,19 @@ public class Menu {
     PoupeeRusse poup1 = new PoupeeRusse("", 0);
     PoupeeRusse poup2 = new PoupeeRusse("", 0);
     PoupeeRusse poup3 = new PoupeeRusse("", 0);
-
-    PoupeeRusse poupee;
     static Scanner scanner = new Scanner(System.in);
     // ANSI escape codes for colors
     public static final  String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
 
 
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.menuInterface();
     }
-
     public void menuInterface() {
 
 
@@ -35,32 +33,59 @@ public class Menu {
                 Choix = scanner.nextInt();
                 switch (Choix) {
                     case 1:
-                        System.out.println(ANSI_RED+"Ajouter la poupée numéro 1"+ANSI_RESET);
-                        poup1.ajouterPoupees();
-                        System.out.println("Ajouter la poupée numéro 2");
-                        poup2.ajouterPoupees();
-                        System.out.println("Ajouter la poupée numéro 3");
-                        poup3.ajouterPoupees();
+                        System.out.println(ANSI_GREEN+"Ajouter la poupée numéro 1"+ANSI_RESET);
+
+                        System.out.println("Entrez le nom de la poupée:");
+                        Scanner input=new Scanner(System.in);
+                        String nom=input.nextLine();
+                        poup1.setNom(nom);
+                        //Scanner Nom = scanner.nextLine();
+                        System.out.println("Entrez la taille de la poupée :");
+                        int taille = input.nextInt();
+                        poup1.setTaille(taille);
+                        System.out.println("Poupées ajoutées avec succès !");
+                        ////////////////////////////////////////////
+
+                        System.out.println(ANSI_GREEN+"Ajouter la poupée numéro 2"+ANSI_RESET);
+                        System.out.println("Entrez le nom de la poupée:");
+                        nom=input.next();
+                        poup2.setNom(nom);
+                        //Scanner Nom = scanner.nextLine();
+                        System.out.println("Entrez la taille de la poupée :");
+                        taille = input.nextInt();
+                        poup2.setTaille(taille);
+                        System.out.println("Poupées ajoutées avec succès !");
+                        System.out.println(ANSI_GREEN+"Ajouter la poupée numéro 3"+ANSI_RESET);
+
+                        System.out.println("Entrez le nom de la poupée:");
+
+                        nom=input.next();
+                        poup3.setNom(nom);
+                        //Scanner Nom = scanner.nextLine();
+                        System.out.println("Entrez la taille de la poupée :");
+                        taille = input.nextInt();
+                        poup3.setTaille(taille);
+                        System.out.println("Poupées ajoutées avec succès !");
+                      //  poup3.ajouterPoupees();
                         break;
                     case 2:
-                        System.out.println("  La liste des poupées disponible   ");
+                        System.out.println(ANSI_CYAN+"  La liste des poupées disponible   "+ANSI_RESET);
                         System.out.println("------------------------------------");
-                        System.out.println("| ------    Poupée Russe 1    ------ |");
+                        System.out.println(ANSI_PURPLE+"| ------    Poupée Russe 1    ------ |\n");
                         poup1.afficherPoupees();
-                        System.out.println("| ------    Poupée Russe 2    ------ |");
+                        System.out.println("| ------    Poupée Russe 2    ------ |\n");
                         poup2.afficherPoupees();
-                        System.out.println("| ------    Poupée Russe 3    ------ |");
+                        System.out.println("| ------    Poupée Russe 3    ------ |\n");
                         poup3.afficherPoupees();
                         break;
                     case 3:
                         GameInterface();
                         break;
                     case 4:
-                        System.out.println(" Quitté  ");
-
+                        System.out.println(ANSI_RED+" Quitté  ");
                         break;
                     default:
-                        System.out.println("      Entrez un choix valid !       ");
+                        System.out.println("      Entrez un choix valid !       "+ANSI_RESET);
                         break;
                 }
             } while (Choix != 4);
@@ -69,15 +94,15 @@ public class Menu {
         public void GameInterface (){
             int ChoixGame;
             do {
-                System.out.println("|       jouer a poupée russe         |");
+                System.out.println(ANSI_CYAN+"|       jouer a poupée russe         |"+ANSI_RESET);
                 System.out.println("|------------------------------------|");
-                System.out.println("|      1. Ouvrir une poupée.         |");
-                System.out.println("|      2. Fermer une poupée.         |");
-                System.out.println("|      3. Placer dans.               |");
-                System.out.println("|      4. Sortir de.                 |");
-                System.out.println("|      5. Retour a Menu.             |");
+                System.out.println(ANSI_GREEN+"|      1. Ouvrir une poupée.         |");
+                System.out.println(ANSI_RED+"|      2. Fermer une poupée.         |");
+                System.out.println(ANSI_GREEN+"|      3. Placer dans.               |");
+                System.out.println(ANSI_RED+"|      4. Sortir de.                 |");
+                System.out.println(ANSI_CYAN+"|      5. Retour a Menu.             |");
                 System.out.println("|------------------------------------|");
-                System.out.print("          Entrez un choix : ");
+                System.out.print(ANSI_RESET+"          Entrez un choix : ");
                 ChoixGame = scanner.nextInt();
                 switch (ChoixGame) {
                     case 1:
@@ -147,7 +172,7 @@ public class Menu {
                                 poup1.placerDans(poup3);
                                 break;
                             case 3 :
-                                poup2.placerDans(poup1);;
+                                poup2.placerDans(poup1);
                                 break;
                             case 4 :
                                 poup2.placerDans(poup3);
@@ -184,7 +209,7 @@ public class Menu {
                                 poup1.sortirDe(poup3);
                                 break;
                             case 3 :
-                                poup2.sortirDe(poup1);;
+                                poup2.sortirDe(poup1);
                                 break;
                             case 4 :
                                 poup2.sortirDe(poup3);

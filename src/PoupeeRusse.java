@@ -1,4 +1,3 @@
-import java.util.*;
 
 class PoupeeRusse extends Poupee {
     private String Nom;
@@ -8,8 +7,6 @@ class PoupeeRusse extends Poupee {
         this.Nom=Nom;
     }
 
-    private static String[] poupees = new String[3];
-    static Scanner scanner = new Scanner(System.in);
 
 
 
@@ -19,21 +16,6 @@ class PoupeeRusse extends Poupee {
 public void setNom(String Nom){
         this.Nom=Nom;
 }
-//@Override
-//    public void AjouterPoupee() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Entrez le nom de la poupée : ");
-//        String nv_nom = scanner.nextLine();
-//        this.setNom(nv_nom);
-//        System.out.println("Entrez la taille de la poupée : ");
-//        int nv_Taille = scanner.nextInt();
-//        this.setTaille(nv_Taille);
-//    }
-
-//    public void AffivherPoupee() {
-//        System.out.println("|Nom: "+this.getNom());
-//        System.out.println("|Taille: "+this.getTaille());
-//    }
 
     @Override
     public void ouvrir() {
@@ -49,9 +31,9 @@ public void setNom(String Nom){
     public void fermer() {
         if (isouvert()) {
             setOuvert(false);
-            System.out.println("La poupée "+this.getNom()+" a été ouvrir avec succes.");
+            System.out.println("La poupée "+this.getNom()+" a été fermer avec succes.");
         } else {
-            System.out.println("La poupée "+this.getNom()+" est déja ouverte.");
+            System.out.println("La poupée "+this.getNom()+" est déja fermer.");
         }
     }
 
@@ -77,21 +59,8 @@ public void setNom(String Nom){
             System.out.println("La poupée russe n'est pas contenue dans la poupée spécifiée.");
         }
     }
-
-    // -----------------------Ajouter poupee ------------------
-    public void ajouterPoupees() {
-
-        System.out.println("Entrez le nom de la poupée:");
-        String Nom = scanner.nextLine();
-        System.out.println("Entrez la taille de la poupée :");
-        int taille = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Poupées ajoutées avec succès !");
-    }
-
-
-    public String afficherPoupees() {{
-            return "Poupée russe : Nom=" + Nom + ", Taille=" + super.getTaille();
+    public void afficherPoupees() {{
+            System.out.print("Nom=" + this.getNom()+ ", Taille=" +this.getTaille()+"\n");
         }
     }
 
